@@ -284,6 +284,7 @@ aside .dashboard-title, .menu li {
 
     color: white;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .dashboard-title {
