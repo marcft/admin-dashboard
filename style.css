@@ -1,5 +1,276 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
+/* fer selector global per a tts title */
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+
+:root {
+    --LIGHT-GRAY: rgb(227, 229, 238);
+    --BORD-RADIUS: 8px;
+}
+
+/* GENERAL STYLING */
+
 body {
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: auto 1fr;
 }
+
+img {
+    display: block;
+}
+
+.icon-sm {
+    width: 25px;
+}
+
+.icon-big {
+    width: 30px;
+    filter: invert(100%);
+}
+
+.img-cropper-sm {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img.profile-pic-sm {
+    height: 50px;
+    margin-left: -15%;
+}
+
+.img-cropper-big {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+img.profile-pic-big {
+    height: 80px;
+    margin-left: -15%;
+}
+
+/* HEADER */
+
+header {
+    padding: 20px;
+    display: grid;
+    row-gap: 30px;
+    grid-template-columns: 1fr auto;
+
+    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+.search {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.search input {
+    flex: 0 1 575px;
+    padding-inline: 15px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--LIGHT-GRAY);
+}
+
+.account-info {
+    justify-self: end;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.presentation {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.presentation .account-username p:last-child {
+    font-size: 1.5rem;
+}
+
+.options {
+    justify-self: end;
+
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.options button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+/* DASHBOARD */
+
+aside {
+    grid-row: 1 / 3;
+    display: grid;
+    gap: 45px;
+    align-content: start;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    background-color: lightblue;
+    padding: 15px;
+}
+
+aside .title, .menu li {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    color: white;
+    margin-bottom: 15px;
+}
+
+.title img {
+    width: 45px;
+}
+
+.title {
+    font-size: 1.3rem;
+}
+
+/* MAIN */
+
+main {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: min-content min-content auto;
+
+    padding: 30px;
+    background-color: var(--LIGHT-GRAY);
+}
+
+/* --- PROJECTS MAIN */
+
+.projects {
+    grid-row: 1 / 4;
+
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-auto-rows: min-content;
+}
+
+.projects h2 {
+    grid-column: 1 / -1;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-left: 8px solid orange;
+    border-radius: var(--BORD-RADIUS);
+    height: 200px;
+}
+
+.card .title {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.actions {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+}
+
+/* --- ANNOUNCEMENTS MAIN */
+
+.announcements h2,.trending h2 {
+    margin-bottom: 30px;
+}
+
+.side-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--BORD-RADIUS);
+}
+
+.side-box .title {
+    font-size: 1rem;
+    margin-bottom: 1px;
+}
+
+.side-box .description {
+    font-size: 0.8rem;
+    color: grey;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.side-box hr {
+    opacity: 0.5;
+    margin-block: 20px;
+}
+
+/* --- TRENDING MAIN */
+
+.trending {
+    grid-column: 2;
+}
+
+.side-box .account {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 2px;
+    grid-template-columns: min-content 1fr;
+}
+
+.side-box .account:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.side-box .img-cropper-sm {
+    grid-row: 1 / 3;
+}
+
+.side-box .account-usename {
+    align-self: end;
+}
+
+.side-box .project-name {
+    grid-column: 2;
+
+    font-size: 0.9rem;
+    color: grey;
+}
+
+/* - Imagen de Freepik https://mir-s3-cdn-cf.behance.net/project_modules/disp/2e80bb98931623.5ee79b6a8f342.jpg 
+*/
