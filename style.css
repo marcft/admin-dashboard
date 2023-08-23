@@ -142,7 +142,7 @@ aside {
     padding: 15px;
 }
 
-aside .title, .menu li {
+aside .dashboard-title, .menu li {
     display: flex;
     gap: 15px;
     align-items: center;
@@ -151,11 +151,11 @@ aside .title, .menu li {
     margin-bottom: 15px;
 }
 
-.title img {
+.dashboard-title img {
     width: 45px;
 }
 
-.title {
+.dashboard-title {
     font-size: 1.3rem;
 }
 
@@ -171,9 +171,20 @@ main {
     background-color: var(--LIGHT-GRAY);
 }
 
+.announcements h2,
+.trending h2 {
+    margin-bottom: 30px;
+}
+
+.side-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--BORD-RADIUS);
+}
+
 /* --- PROJECTS MAIN */
 
-.projects {
+.projects-sect {
     grid-row: 1 / 4;
 
     display: grid;
@@ -182,7 +193,7 @@ main {
     grid-auto-rows: min-content;
 }
 
-.projects h2 {
+.projects-sect h2 {
     grid-column: 1 / -1;
 }
 
@@ -195,12 +206,12 @@ main {
     height: 200px;
 }
 
-.card .title {
+.card-title {
     margin-bottom: 10px;
     font-weight: 500;
 }
 
-.actions {
+.card-actions {
     position: absolute;
     bottom: 20px;
     right: 40px;
@@ -211,22 +222,12 @@ main {
 
 /* --- ANNOUNCEMENTS MAIN */
 
-.announcements h2,.trending h2 {
-    margin-bottom: 30px;
-}
-
-.side-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: var(--BORD-RADIUS);
-}
-
-.side-box .title {
+.announce-title {
     font-size: 1rem;
     margin-bottom: 1px;
 }
 
-.side-box .description {
+.announce-description {
     font-size: 0.8rem;
     color: grey;
     display: -webkit-box;
@@ -235,37 +236,37 @@ main {
     overflow: hidden;
 }
 
-.side-box hr {
+.announcements-sect hr {
     opacity: 0.5;
     margin-block: 20px;
 }
 
 /* --- TRENDING MAIN */
 
-.trending {
+.trending-sect {
     grid-column: 2;
 }
 
-.side-box .account {
+.trending-element {
     display: grid;
     column-gap: 20px;
     row-gap: 2px;
     grid-template-columns: min-content 1fr;
 }
 
-.side-box .account:not(:last-child) {
+.trending-element:not(:last-child) {
     margin-bottom: 20px;
 }
 
-.side-box .img-cropper-sm {
+.trending-element .img-cropper-sm {
     grid-row: 1 / 3;
 }
 
-.side-box .account-usename {
+.trending-element .author {
     align-self: end;
 }
 
-.side-box .project-name {
+.trending-element .project-name {
     grid-column: 2;
 
     font-size: 0.9rem;
